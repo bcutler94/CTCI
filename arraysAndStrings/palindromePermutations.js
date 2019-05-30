@@ -4,7 +4,7 @@ function palindromePerm (str) {
     const newStr = str.replace(/\s/g, '').toLowerCase();
     const freqObj = {};
     for (let char of newStr) {
-        freqObj[char] = freqObj[char] ? freqObj[char]++ : 1;
+        freqObj[char] = freqObj[char] === undefined ? 1 : freqObj[char] + 1;
     }
     let oddCount = 0;
     for (let key in freqObj) {
@@ -13,3 +13,5 @@ function palindromePerm (str) {
     }
     return true;
 }
+
+console.log(palindromePerm('Tact coa'))
