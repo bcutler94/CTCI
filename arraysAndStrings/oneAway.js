@@ -5,5 +5,11 @@ edit away from being equal
 */
 
 function oneAway (str1, str2) {
+    if (Math.abs(str1.length - str2.length) > 1) return false;
+    let maxDiff = Math.max(str1.length, str2.length) - 1;
+    const freqObj = {};
+    for (let char of str1) {
+        freqObj[char] = freqObj[char] ? freqObj[char] + 1 : 1;
+    }
     
 }
