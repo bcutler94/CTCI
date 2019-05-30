@@ -11,5 +11,12 @@ function oneAway (str1, str2) {
     for (let char of str1) {
         freqObj[char] = freqObj[char] ? freqObj[char] + 1 : 1;
     }
-    
+    for (let char of str2) {
+        const exist = freqObj[char] !== undefined;
+        if (exist && freqObj[char] > 0) {
+            maxDiff--;
+            freqObj[char]--;
+        }
+    }
+    return maxDiff === 0;
 }
