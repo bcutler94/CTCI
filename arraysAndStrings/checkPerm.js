@@ -15,7 +15,11 @@ function checkPermWithObj (str1, str2) {
     return true;
 }
 
+
 // without obj
 function checkPerm (str1, str2) {
-    const sort1 = 
+    const sort1 = str1.split('').sort().join();
+    const sort2 = str2.split('').sort().join();
+    return sort1 === sort2;
 }
+
