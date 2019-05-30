@@ -7,7 +7,9 @@ function urlify (str, len) {
         if (!regex.test(str[i])) {
             let newStr = '';
             let count = 0;
-            while
+            while (count < len) {
+                
+            }
         }
     }
 }
