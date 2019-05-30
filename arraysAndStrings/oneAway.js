@@ -22,3 +22,15 @@ function oneAway (str1, str2) {
     }
     return maxDiff === 0;
 }
+
+function oneAwayOneIteration (str1, str2) {
+    if (str1.length === str2.length) {
+        return oneReplace(str1, str2);
+    } else if (str1.length < str2.length) {
+        return oneDelete(str1, str2);
+    } else {
+        return oneDelete(str2, str1);
+    }
+}
+
+
