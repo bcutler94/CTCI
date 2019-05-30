@@ -23,6 +23,8 @@ function oneAway (str1, str2) {
     return maxDiff === 0;
 }
 
+// time complexity: O(min(N, M)) -> N and M are lengths of strings
+// space complexity: O(1) 
 function oneAwayOneIteration (str1, str2) {
     if (str1.length === str2.length) {
         return oneReplace(str1, str2);
@@ -59,4 +61,5 @@ function oneDelete (str1, str2) {
             idx2++;
         }
     }
+    return true;
 }
