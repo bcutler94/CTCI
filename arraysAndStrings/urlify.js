@@ -21,4 +21,4 @@ function urlify (str, len) {
     return '';
 }
 
-console.log(urlify('b ', 2))
+console.log(urlify('ben ', 2))
