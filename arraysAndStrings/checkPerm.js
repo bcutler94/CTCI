@@ -1,6 +1,8 @@
 // Given two strings, check whether one is a permutation of the other
 
 // with obj
+// time complexity: O(s) -> s = length of the strings (must be same)
+// space complexity: O(s) -> s = length of strings (for objects created)
 function checkPermWithObj (str1, str2) {
     const obj1 = {};
     const obj2 = {};
@@ -17,7 +19,10 @@ function checkPermWithObj (str1, str2) {
 
 
 // without obj
+// time complexity: O(SlogS) -> s = length of strings (must be same);
+// space complexity: O(S) -> s = length of strings (since we split and join)
 function checkPerm (str1, str2) {
+    if (str1.length !== str2.length) return false;
     const sort1 = str1.split('').sort().join();
     const sort2 = str2.split('').sort().join();
     return sort1 === sort2;

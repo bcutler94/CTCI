@@ -13,6 +13,7 @@ function isUniqueWithSet (string) {
     return true;
 }
 
+
 function isUniqueWithoutSet (string) {
     const arr = string.split('').sort();
     for (let i = 0; i < arr.length - 1; i++) {
