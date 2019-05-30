@@ -8,8 +8,15 @@ function urlify (str, len) {
             let newStr = '';
             let count = 0;
             while (count < len) {
-                
+                const char = str[i + count];
+                newStr += regex.test(char) ? '%20' : char;
+                count++
             }
-        }
+            return newStr
+        } 
+        i++;
     }
+    return '';
 }
+
+console.log(urlify('b ', 2))
