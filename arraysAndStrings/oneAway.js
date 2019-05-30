@@ -33,4 +33,30 @@ function oneAwayOneIteration (str1, str2) {
     }
 }
 
+function oneReplace (str1, str2) {
+    let diffCheck = false;
+    for (let i = 0; i < str1.length; i++) {
+        if (str1[i] !== str2[i]) {
+            if (diffCheck) {
+                return false;
+            } else {
+                diffCheck = true;
+            }
+        }
+    }
+    return true;
+}
 
+function oneDelete (str1, str2) {
+    let idx1 = 0;
+    let idx2 = 0;
+    while (idx1 < str1.length && idx2 < str2.length) {
+        if (str1[idx1] !== str2[idx2]) {
+            if (idx1 !== idx2) return false;
+            idx2++;
+        } else {
+            idx1++;
+            idx2++;
+        }
+    }
+}
