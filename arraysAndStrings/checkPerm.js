@@ -19,7 +19,7 @@ function checkPermWithObj (str1, str2) {
 
 
 // without obj
-// time complexity: O(SlogS) -> s = length of strings (must be same);
+// time complexity: O(SlogS) -> s = length of strings (sorting);
 // space complexity: O(S) -> s = length of strings (since we split and join)
 function checkPerm (str1, str2) {
     if (str1.length !== str2.length) return false;

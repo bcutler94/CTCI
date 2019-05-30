@@ -13,7 +13,7 @@ function isUniqueWithSet (string) {
     return true;
 }
 
-
+// time complexity: O(SlogS) -> s = length of string (sorting)
 function isUniqueWithoutSet (string) {
     const arr = string.split('').sort();
     for (let i = 0; i < arr.length - 1; i++) {
