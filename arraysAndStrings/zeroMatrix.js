@@ -1,5 +1,7 @@
 // Given a matrix, convert all columns and rows of an element with 0 to all 0
 
+// time complexity: O(K) -> K = number of elements in matrix (K = M x N)
+// space complexity: O(K) -> K = number of elements in matrix (K = M x N)
 function zeroMatrix (matrix) {
     const zeroLevel = new Array (matrix[0].length).fill(0);
     const oneLevel = new Array(matrix[0].length).fill(1);
