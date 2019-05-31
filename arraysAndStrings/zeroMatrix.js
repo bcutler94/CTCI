@@ -40,4 +40,27 @@ function helper (matrix) {
     return [rowSet, colSet];
 }
 
+function zeroMatrixConstantSpace (matrix) {
+    const rowBool = rowCheck(matrix);
+    const colBool = colCheck(matrix);
+}
+
+function zeroEdit (matrix) {
+    
+}
+
+function rowCheck (matrix) {
+    for (let i = 0; i < matrix[0].length; i++) {
+        if (matrix[0][i] === 0) return true;
+    }
+    return false;
+}
+
+function colCheck (matrix) {
+    for (let i = 0; i < matrix.length; i++) {
+        if (matrix[i][0] === 0) return true;
+    }
+    return false;
+}
+
 console.log(zeroMatrix([[0, 1, 1], [1, 1, 1], [1, 1, 0]]))
