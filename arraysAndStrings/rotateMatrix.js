@@ -24,6 +24,11 @@ function rotateMatrixConstantSpace (matrix) {
     while (j < len - 1) {
         let i = 0;
         while (i < len - j) {
+            if (len % 2 === 1) {
+                if (j === j + 1 && len - j === j + 1) return matrix;
+            } else {
+                if (j + 1 > len - i - j) return matrix;
+            }
             const tLeft = matrix[j][j + i];
             const tRight = matrix[j + 1][len - j];
             const bRight = matrix[len - j][len - i - j];
