@@ -2,7 +2,7 @@
 
 function zeroMatrix (matrix) {
     const zeroLevel = new Array (matrix[0].length).fill(0);
-    const oneLevel = zeroLevel.fill(1);
+    const oneLevel = new Array(matrix[0].length).fill(1);
     const [rowSet, colSet] = helper (matrix);
     const output = [];
     let i = 0;
@@ -37,3 +37,5 @@ function helper (matrix) {
     }
     return [rowSet, colSet];
 }
+
+console.log(zeroMatrix([[0, 1, 1], [1, 1, 1], [1, 1, 0]]))
