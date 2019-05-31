@@ -4,7 +4,20 @@ function zeroMatrix (matrix) {
     const zeroLevel = new Array (matrix[0].length).fill(0);
     const oneLevel = zeroLevel.fill(1);
     const [rowSet, colSet] = helper (matrix);
-    
+    const output = [];
+    let i = 0;
+    while (i < matrix.length) {
+        if (rowSet.has(i)) {
+            output.push(zeroLevel);
+        } else {
+            const newLevel = oneLevel.map((ele, idx) => {
+                return colSet.has(idx) ? 0 : ele;
+            })
+            output.push(newLevel);
+        }
+        i++;
+    }
+    return output;
 }
 
 function helper (matrix) {
