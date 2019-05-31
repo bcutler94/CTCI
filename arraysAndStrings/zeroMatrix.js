@@ -43,10 +43,48 @@ function helper (matrix) {
 function zeroMatrixConstantSpace (matrix) {
     const rowBool = rowCheck(matrix);
     const colBool = colCheck(matrix);
+    zeroEdit(matrix);
+    for (let i = 1; i < matrix[0].length; i++) {
+        if (matrix[0][i] === 0) {
+            zeroCol(matrix, i);
+        }
+    }
+    for (let i = 1; i < matrix.length; i++) {
+        if (matrix[i][0] === 0) {
+            zeroRow(matrix, i);
+        }
+    }
+    
+    if (rowBool) {
+        zeroRow(matrix, 0);
+    }
+    if (colBool) {
+        zeroCol(matrix, 0);
+    }
+    return matrix;
+}
+
+function zeroRow(matrix, i) {
+    for (let j = 0; j < matrix[i].length; j++) {
+        matrix[i][j] = 0;
+    }
+}
+
+function zeroCol (matrix, i) {
+    for (let j = 0; j < matrix.length; j++) {
+        matrix[j][i] = 0;
+    }
 }
 
 function zeroEdit (matrix) {
-    
+    for (let i = 1; i < matrix.length; i++) {
+        for (let j = 1; j < matrix[0].length; j++) {
+            if (matrix[i][j] === 0) {
+                matrix[i][0] = 0;
+                matrix[0][j] = 0;
+            }
+        }
+    }
 }
 
 function rowCheck (matrix) {
@@ -63,4 +101,5 @@ function colCheck (matrix) {
     return false;
 }
 
-console.log(zeroMatrix([[0, 1, 1], [1, 1, 1], [1, 1, 0]]))
+console.log(zeroMatrixConstantSpace([[0, 1, 1], [1, 1, 1], [1, 1, 1]]))
+console.log(zeroMatrix([[0, 1, 1], [1, 1, 1], [1, 1, 1]]))
